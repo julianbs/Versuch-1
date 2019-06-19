@@ -14,6 +14,7 @@ tasterstatus=digitalRead(taster); //Hier wird der Pin7 ausgelesen (Befehl:digita
 if (tasterstatus == HIGH)//Verarbeitung: Wenn der taster gedrückt ist (Das Spannungssignal ist hoch)
 { //Programmabschnitt des IF-Befehls öffnen.
 digitalWrite(LEDblau, HIGH); //dann soll die LED leuchten
+                                                                  // HIER PROGRAMM FÜR DISPLAYAUSGABE ÖFFNEN
 delay (5000); //und zwar für für 5 Sekunden (5000 Millisekunden).
 digitalWrite(LEDblau, LOW); //danach soll die LED aus sein.
 } //Programmabschnitt des IF-Befehls schließen.
