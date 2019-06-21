@@ -45,7 +45,7 @@ lcd.setCursor(0, 1); // lcd.setCursor(0,1) bedeutet: Erstes Zeichen in der zweit
 lcd.print("Signal.leuchtet"); //Dort soll dann der Text „Signal.leuchtet“ auftauchen.
 }
 
-                                               //Display Ausgabe ende
+                                                 //Display Ausgabe ende
 
 }
 
