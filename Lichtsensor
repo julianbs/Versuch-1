@@ -1,3 +1,8 @@
+#include <LiquidCrystal.h> //LCD-Bibliothek laden
+
+LiquidCrystal lcd(2, 1, 6, 5, 4, 3); //In dieser Zeile wird festgelegt, welche Pins des Mikrocontrollerboards für das LCD verwendet wird (Am besten erstmal nicht verändern).
+
+
 int eingang= A0; //Das Wort „eingang“ steht jetzt für den Wert „A0“ (Bezeichnung vom Analogport 0)
 int LEDsignal = 12; //Das Wort „LEDsignal“ steht jetzt für den Wert 12
 int sensorWert = 0; //Variable für den Sensorwert mit 0 als Startwert
@@ -23,9 +28,28 @@ digitalWrite(LEDsignal, LOW); //…soll die LEDsignal nicht leuchten…
 else //andernfalls…
 {
 digitalWrite(LEDsignal, HIGH); //….soll sie leuchten.
+
+
+
+                                                  //Display Ausgabe starten
+void setup() 
+{
+lcd.begin(15, 2); //Im Setup wird angegeben, wie viele Zeichen und Zeilen verwendet werden. Hier: 15 Zeichen in 2 Zeilen.
 }
 
-delay (50);//Eine kurze Pause, in der die LEDsignal an oder aus ist
+void loop() 
+{
+lcd.setCursor(0, 0); //Startposition der Darstellung auf dem LCD festlegen. lcd.setCursor(0,0) bedeutet: Erstes Zeichen in der ersten Zeile.
+lcd.print("Schranke.offen"); //Dort soll der Text „Schranke.offen“ erscheinen. Der Befehl lcd.setCursor ist dem Mikrocontrollerboard durch das Aufrufen der Bibliothek bekannt.
+lcd.setCursor(0, 1); // lcd.setCursor(0,1) bedeutet: Erstes Zeichen in der zweiten Zeile.
+lcd.print("Signal.leuchtet"); //Dort soll dann der Text „Signal.leuchtet“ auftauchen.
+}
+
+                                               //Display Ausgabe ende
+
+}
+
+delay (500);//Eine kurze Pause, in der die LEDsignal an oder aus ist
 
 }//Mit dieser letzten Klammer wird der Loop-Teil geschlossen.
 
