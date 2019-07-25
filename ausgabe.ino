@@ -1,4 +1,4 @@
-void ausgabe() //Julien Gutzeit
+void ausgabe() //Julian Gutzeit
 {
  
  lcd.setCursor(0, 0); //Startposition der Darstellung auf dem LCD festlegen. lcd.setCursor(0,0) bedeutet: Erstes Zeichen in der ersten Zeile.
