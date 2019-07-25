@@ -1,4 +1,4 @@
-void signalrotJG() //Julien Gutzeit
+void signalrotJG() //Julian Gutzeit
 {
 if (digitalRead(sicherheitPin)==HIGH)
 {
