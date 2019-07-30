@@ -100,23 +100,19 @@ void blinkenAG(char startstate, char ampelstate, char schrankestate) //Alexander
   delay (1500);
 }
 
-void signalrotJG()
+void signalrotJG() //Julian Gutzeit
 {
-sensorWert =analogRead(eingang); //Die Spannung an dem Fotowiderstand auslesen und unter der Variable „sensorWert“ abspeichern.
-Serial.print("Sensorwert = " ); //Ausgabe am Serial-Monitor: Das Wort „Sensorwert: „
-Serial.println(sensorWert); //Ausgabe am Serial-Monitor. Mit dem Befehl Serial.print wird der Sensorwert des Fotowiderstandes in Form einer Zahl zwischen 0 und 1023 an den serial monitor gesendet.
-
- if (sensorWert > 512 ) //Wenn der Sensorwert über 512 beträgt….
- {
-  digitalWrite(signalRotPin, LOW); //…soll die LEDsignal nicht leuchten…
- }
-
- else //andernfalls…
- {
-  digitalWrite(signalRotPin, HIGH); //….soll sie leuchten.
- }
+if (digitalRead(sicherheitPin)==HIGH)
+{
+  digitalWrite(signalGruenPin, HIGH);
+  digitalWrite(signalRotPin, LOW); 
+  delay(5000);
 }
-//Display Ausgabe starten
+else 
+{
+  signalrotJG();
+};
+}
 
 void ausgabe() 
 {
